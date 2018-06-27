@@ -1,0 +1,48 @@
+
+.left, .right {
+  position:absolute;
+  width:50%;
+  height:100%;
+}
+
+.left {
+  left:0px;
+
+}
+.right {
+  right:0px;
+}
+
+.left span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:turquoise;
+  width: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 300px;
+}
+
+.right span:hover {
+  background-color: darkgoldenrod;
+}
+
+.right span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:goldenrod;
+  width: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 300px;
+}
+
+.left span:hover {
+  background-color: darkturquoise;
+}
