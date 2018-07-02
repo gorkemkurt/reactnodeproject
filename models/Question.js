@@ -3,7 +3,9 @@ const { Schema } = mongoose;
 
 const questionSchema = new Schema({
   text: { type: String, required: true },
-  subject: String
+  subject: String,
+  createdDate: { type: Date, default: Date.now },
+  author: String
 });
 
 mongoose.model('questions', questionSchema);

@@ -1,6 +1,6 @@
 // dev.js - dev keys here!!
 module.exports = {
-  mongoURI: 'localhost:27017',
+  mongoURI: 'mongodb://localhost:27017',
   cookieKey: process.env.COOKIE_KEY,
   stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
   stripeSecretKey: process.env.STRIPE_SECRET_KEY,
