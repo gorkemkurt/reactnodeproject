@@ -1,26 +1,37 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+// import { fetchQuestionSet } from '../actions';
 import './styles/Question.css';
 
 class App extends Component {
+  state = {
+    questionSet: ''
+  };
+
   componentDidMount() {
-    const language = this.props.location.state.language;
-    const country = this.props.location.state.countryName;
+    if (this.props.location.state) {
+      const language = this.props.location.state.language;
+      const country = this.props.location.state.countryName;
+    }
+    axios.get('/api/questionSets').then(response => {
+      this.setState({
+        questionSet: response.data.questionSet
+      });
+    }).catch(error => console.log(error));
+    // this.props.fetchQuestionSet();
   }
 
   render() {
-    const question1 = { text: "Question 1 dummy" };
-    const question2 = { text: "Question 2 dummy" };
-
     return (
       <div >
         <div className="left" >
           <span>
-            {question1.text}
+            {this.state.questionSet.question1}
           </span>
         </div>
         <div className="right">
           <span>
-            {question2.text}
+            {this.state.questionSet.question2}
           </span>
         </div>
       </div>
