@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+const QuestionSetResult = require('./QuestionSetResult');
 
 const questionSetSchema = new Schema({
   question1: String,
@@ -9,13 +10,14 @@ const questionSetSchema = new Schema({
   likes: Number,
   dislikes: Number,
   shareCount: Number,
-  createdDate: { type: Date, default: Date.now }
+  createdDate: { type: Date, default: Date.now },
+  result1 : QuestionSetResult,
+  result2 : QuestionSetResult
 });
 
 questionSetSchema.methods.toJSON = function () {
   var obj = this.toObject();
   delete obj.createdDate;
-  delete obj._id;
   delete obj.__v;
   return obj;
 }

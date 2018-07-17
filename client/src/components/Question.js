@@ -5,7 +5,8 @@ import './styles/Question.css';
 
 class App extends Component {
   state = {
-    questionSet: ''
+    questionSet: '',
+    language: ''
   };
 
   componentDidMount() {
@@ -18,18 +19,25 @@ class App extends Component {
         questionSet: response.data.questionSet
       });
     }).catch(error => console.log(error));
+    const language = navigator.language ? navigator.language : navigator.browserLanguage;
+    this.setState({ language: language });
     // this.props.fetchQuestionSet();
+  }
+
+  answerQuestion(answer) {
+    //send questionSetId and answer, show results by calculating clients answer
+    console.log(answer);
   }
 
   render() {
     return (
       <div >
-        <div className="left" >
+        <div className="left" onClick={() => { this.answerQuestion('asdasdasdasd') }}>
           <span>
             {this.state.questionSet.question1}
           </span>
         </div>
-        <div className="right">
+        <div className="right" onClick={() => { this.answerQuestion('qweqwewqewqeqw') }}>
           <span>
             {this.state.questionSet.question2}
           </span>
