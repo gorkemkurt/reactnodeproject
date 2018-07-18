@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const passport= require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const keys = require('./config/keys');
 require('./models/QuestionSet');
 require('./models/UserIpQuestionSet');
@@ -11,6 +13,9 @@ mongoose.connect(keys.mongoURI);
 
 const app = express();
 
+passport.use(new GoogleStrategy());
+//clienId 722242298510-2sa5ug4ctcpcki5jd805t48ckh23mcvr.apps.googleusercontent.com
+//clientSecret syJnmqUgifKCrItSapr1Ac6O
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
