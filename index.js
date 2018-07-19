@@ -5,6 +5,7 @@ const keys = require('./config/keys');
 require('./services/passport');
 require('./models/QuestionSet');
 require('./models/UserIpQuestionSet');
+require('./models/User');
 const router = require('./router/index');
 
 mongoose.Promise = global.Promise;
