@@ -1,9 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const keys = require('./config/keys');
+require('./services/passport');
 require('./models/QuestionSet');
 require('./models/UserIpQuestionSet');
 const router = require('./router/index');
@@ -24,23 +23,6 @@ app.use((req, res, next) => {
     // res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
-
-passport.use(
-    new GoogleStrategy({
-        clientID: keys.googleClientID,
-        clientSecret: keys.googleClientSecret,
-        callbackURL: '/auth/google/callback'
-    }, (accessToken) => {
-        console.log(accessToken);
-    })
-);
-
-app.get(
-    '/auth/google',
-    passport.authenticate('google', {
-        scope: ['profile', 'email']
-    })
-);
 
 router(app);
 
