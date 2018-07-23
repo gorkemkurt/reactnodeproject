@@ -24,6 +24,7 @@ class App extends Component {
             <button > {this.state.countryName} </button>
           </Link>
         </div>
+        <a href="/auth/google">Sign In With Google</a>
       </div>
     );
   }
