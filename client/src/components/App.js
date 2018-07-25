@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 // import axios from 'axios';
 import './styles/App.css';
-import { Link } from 'react-router-dom';
+import Landing from './Landing';
 
 class App extends Component {
   state = {
@@ -18,16 +19,24 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <div className="centered">
-          <Link to={{ pathname: '/index', state: { countryName: this.state.countryName } }}>
-            <button > {this.state.countryName} </button>
-          </Link>
-        </div>
-        <a href="/auth/google">Sign In With Google</a>
+      <div className="container">
+        <BrowserRouter>
+          <div>
+            <Route exact path="/" component={Landing} />
+
+          </div>
+        </BrowserRouter>
       </div>
     );
   }
 }
 
 export default App;
+
+
+{/* <div className="centered">
+          <Link to={{ pathname: '/index', state: { countryName: this.state.countryName } }}>
+            <button > {this.state.countryName} </button>
+          </Link>
+        </div>
+        <a href="/auth/google">Sign In With Google</a> */}
