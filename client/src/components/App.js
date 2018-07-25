@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 // import axios from 'axios';
 import './styles/App.css';
 import Landing from './Landing';
@@ -10,6 +12,7 @@ class App extends Component {
   };
 
   componentDidMount() {
+    this.props.fetchUser();
     // axios.get('https://freegeoip.net/json/').then(response => {
     //   this.setState({
     //     countryName: response.data.country_name
@@ -31,7 +34,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(null, actions)(App);
 
 
 {/* <div className="centered">
