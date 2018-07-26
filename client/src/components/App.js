@@ -5,6 +5,7 @@ import * as actions from '../actions';
 // import axios from 'axios';
 import './styles/App.css';
 import Landing from './Landing';
+import Question from './Question';
 
 class App extends Component {
   state = {
@@ -26,7 +27,7 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Route exact path="/" component={Landing} />
-
+            <Route exact path="/question" component={Question} />
           </div>
         </BrowserRouter>
       </div>
