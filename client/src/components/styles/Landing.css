@@ -1,0 +1,72 @@
+/* .centered {
+    background-color: rgb(71, 165, 209);
+    color: white;
+    width: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 600px;
+} */
+
+.innerDiv {
+    width: inherit;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loginBtn {
+    float: right;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    width: 30%;
+}
+
+#withoutLoginBtn {
+    float: left;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    width: 60%;
+}
+
+#title {
+    background-color: #2bbbad;
+    color: white;
+    padding: 8px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+#panell {
+    /* margin-top: 25%; */
+    padding: 0px;
+}
+
+#username,
+#password {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#checkbox {
+    margin-left: 30px;
+}
+
+form {
+    padding: 0px;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+#createAccount,
+#forgotPassword {
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.addSpace {
+  margin-bottom: 5px;
+}
