@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles/Landing.css';
 import 'materialize-social/materialize-social.css';
+import 'font-awesome/css/font-awesome.min.css'; 
 
 const Landing = () => {
   return (
