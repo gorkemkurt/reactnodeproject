@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USER } from './types';
+import { FETCH_USER, FETCH_QUESTION_SET } from './types';
 
 export const fetchUser = () => async dispatch => {
   const res = await axios.get('/api/currentuser');
@@ -10,8 +10,11 @@ export const fetchUser = () => async dispatch => {
   });
 };
 
-// export const fetchQuestionSet = () => async dispatch => {
-//   const res = await axios.get('/api/questionSets');
+export const fetchQuestionSet = () => async dispatch => {
+  const res = await axios.get('/api/questionSets');
 
-//   dispatch({ payload: res.data });
-// };
+  dispatch({
+    type: FETCH_QUESTION_SET,
+    payload: res.data
+  });
+};

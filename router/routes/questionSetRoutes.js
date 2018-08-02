@@ -6,15 +6,15 @@ const UserIpQuestionSet = mongoose.model('userIpQuestionSets');
 
 module.exports = app => {
     app.get('/api/questionSets', async (req, res) => {
-        let clientIp = req.ip;
-        if (clientIp.substr(0, 7) == "::ffff:") {
-            clientIp = clientIp.substr(7);
-        }
+        // let clientIp = req.ip;
+        // if (clientIp.substr(0, 7) == "::ffff:") {
+        //     clientIp = clientIp.substr(7);
+        // }
         // read client ip and answered questions from database, and fetch an unanswered question
-        const questionSetIds = await UserIpQuestionSet.find({ userIp: clientIp }).select();
-        const questionSet = await QuestionSet.findOne({ "_id": { "$nin": questionSetIds } }).select();
+        // const questionSetIds = await UserIpQuestionSet.find({ userIp: clientIp }).select();
+        // const questionSet = await QuestionSet.findOne({ "_id": { "$nin": questionSetIds } }).select();
         // console.log(questionSet);
-        res.send({ questionSet: questionSet });
+        // res.send({ questionSet: questionSet });
     });
 
     app.post('/api/questionSets', validateQuestionSet, async (req, res) => {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import axios from 'axios';
-// import { fetchQuestionSet } from '../actions';
+import * as actions from '../actions';
 import './styles/Question.css';
 
 class Question extends Component {
@@ -22,7 +22,8 @@ class Question extends Component {
     // }).catch(error => console.log(error));
     const language = navigator.language ? navigator.language : navigator.browserLanguage;
     this.setState({ language: language });
-    // this.props.fetchQuestionSet();
+    this.props.fetchQuestionSet();
+    console.log(this.state.questionSet);
   }
 
   answerQuestion(answer) {
@@ -49,8 +50,8 @@ class Question extends Component {
   };
 }
 
-function mapStateToProps({ auth }) {
-  return { auth }
-}
+// function mapStateToProps({ auth }) {
+//   return { auth }
+// }
 
-export default connect(mapStateToProps)(Question);
+export default connect(null, actions)(Question);
